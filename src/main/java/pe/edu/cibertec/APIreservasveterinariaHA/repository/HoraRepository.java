@@ -1,4 +1,8 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.repository;
 
-public interface HoraRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Hora;
+@Repository
+public interface HoraRepository extends JpaRepository<Hora, Integer> {
 }

@@ -1,4 +1,8 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.repository;
 
-public interface MascotaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Mascota;
+@Repository
+public interface MascotaRepository extends JpaRepository<Mascota, Integer> {
 }
