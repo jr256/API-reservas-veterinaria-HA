@@ -12,11 +12,9 @@ public class Servicio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idservicio;
 
-    @Column(name = "nombreservicio")
-    private String nombreservicio;
+    @Column(name = "servicio")
+    private String servicio;
 
-    @Column(name = "precio")
-    private Double precio;
 
     @ManyToOne
     @JoinColumn(name ="idestado")

@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/v1/consulta")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ConsultaController {
 
     private ConsultaService consultaService;
