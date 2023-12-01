@@ -53,7 +53,14 @@ public class ConsultaController {
         return  new ResponseEntity<>(consultaList, HttpStatus.OK);
     }
 
-
+    @PutMapping("/reservar")
+    public ResponseEntity<Consulta> reservarConsulta(
+            @RequestBody Consulta consulta
+    ){
+        return new ResponseEntity<>(
+                consultaService.reservarConsulta(consulta), HttpStatus.OK
+        );
+    }
 
 
 }

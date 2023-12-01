@@ -29,7 +29,10 @@ public class ConsultaService {
         return consultaRepository.buscarConsultasReservadas(idsede, idespecialidad, fecha);
     }
 
+    public Consulta reservarConsulta(Consulta consulta){
+        return consultaRepository.save(consulta);
 
+    }
 
 
 }

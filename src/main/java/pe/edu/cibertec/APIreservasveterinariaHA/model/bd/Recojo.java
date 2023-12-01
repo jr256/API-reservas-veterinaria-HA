@@ -15,8 +15,20 @@ public class Recojo {
     @Column(name = "fecha")
     private String fecha;
 
+    @Column(name = "direccion")
+    private String direccion;
+
     @ManyToOne
     @JoinColumn(name = "idservicio")
     private Servicio servicio;
+
+
+    @ManyToOne
+    @JoinColumn(name = "iddistrito")
+    private DistritoCobertura distrito;
+
+    @ManyToOne
+    @JoinColumn(name = "idmascota")
+    private Mascota mascota;
 
 }

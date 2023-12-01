@@ -1,5 +1,6 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.repository;
 
+import jdk.jfr.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -20,5 +21,7 @@ public interface ConsultaRepository extends JpaRepository<Consulta, Integer> {
 
     @Query("SELECT cc FROM Consulta cc WHERE cc.sede.idsede = :idsede AND cc.especialidad.idespecialidad = :idespecialidad AND cc.fecha = :fecha AND cc.estadoservicio.idestadoservicio = 2")
     List<Consulta> buscarConsultasReservadas(@Param("idsede") Integer idsede,@Param("idespecialidad")  Integer idespecialidad,@Param("fecha") String fecha);
+
+
 
 }
