@@ -3,8 +3,8 @@ package pe.edu.cibertec.APIreservasveterinariaHA.model.dto;
 import lombok.Data;
 
 @Data
-public class ServicioDto {
+public class HoraDto {
 
-    private Integer idservicio;
-    private String servicio;
+    private Integer idhora;
+    private String hora;
 }

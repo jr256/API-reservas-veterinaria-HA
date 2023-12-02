@@ -3,6 +3,7 @@ package pe.edu.cibertec.APIreservasveterinariaHA.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Consulta;
+import pe.edu.cibertec.APIreservasveterinariaHA.model.dto.ConsultaDto;
 import pe.edu.cibertec.APIreservasveterinariaHA.repository.ConsultaRepository;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public class ConsultaService {
 
     @Autowired
     private ConsultaRepository consultaRepository;
+
+
 
     public List<Consulta> listarConsultas(){
         return consultaRepository.findAll();
@@ -34,7 +37,9 @@ public class ConsultaService {
 
     }
 
-    public List<Consulta> listarConsultasReservadasPorMascota(Integer idmascota) {
+
+
+    public List<Consulta> listarConsultasPorMascota(Integer idmascota) {
         return consultaRepository.buscarConsultasReservadasPorMascota(idmascota);
     }
 

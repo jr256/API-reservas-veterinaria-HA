@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.cibertec.APIreservasveterinariaHA.mapper.RecojoMapper;
+import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Consulta;
 import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Recojo;
 import pe.edu.cibertec.APIreservasveterinariaHA.model.dto.RecojoDto;
 import pe.edu.cibertec.APIreservasveterinariaHA.repository.RecojoRepository;
@@ -26,13 +27,15 @@ public class RecojoService {
 
     }
 
-    public List<Recojo> listarRecojos(){
-        return recojoRepository.listarRecojos();
+
+
+    public List<Recojo> listarRecojosReservados( String fecha) {
+        return recojoRepository.buscarRecojosReservados(fecha);
     }
 
-    public List<RecojoDto> buscarRecojosPorMascota(Integer idMascota){
-        List<Recojo>  recojoList = recojoRepository.buscarRecojosPorMascota(idMascota);
-        return new ArrayList<>(recojoList.stream().map(recojo -> recojoMapper.fromRecojo(recojo)).collect(Collectors.toList()));
+    public List<Recojo> buscarRecojosPorMascota(Integer idMascota){
+        return recojoRepository.buscarRecojosPorMascota(idMascota);
+
     }
 
 }

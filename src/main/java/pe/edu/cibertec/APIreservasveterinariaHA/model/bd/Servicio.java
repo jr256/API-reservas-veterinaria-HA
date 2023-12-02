@@ -16,8 +16,6 @@ public class Servicio {
     private String servicio;
 
 
-    @ManyToOne
-    @JoinColumn(name ="idestado")
-    private Estado estado;
+
 
 }
