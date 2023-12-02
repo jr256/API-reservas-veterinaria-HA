@@ -10,7 +10,7 @@ import pe.edu.cibertec.APIreservasveterinariaHA.service.UserService;
 
 @RestController
 @RequestMapping(path = "mascota")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MascotaController {
 
     private MascotaService mascotaService;
@@ -27,6 +27,13 @@ public class MascotaController {
         User user = userService.loadUserByEmail(mascotaDTO.getUser().getEmail());
         if (user != null) throw new RuntimeException("Email Already Exist");
         return mascotaService.createMascota(mascotaDTO);
+    }
+
+
+
+    @GetMapping("/find")
+    public MascotaDto loadMascotaByEmail(@RequestParam(name = "email", defaultValue = "") String email) {
+        return mascotaService.loadMascotaByEmail(email);
     }
 
 

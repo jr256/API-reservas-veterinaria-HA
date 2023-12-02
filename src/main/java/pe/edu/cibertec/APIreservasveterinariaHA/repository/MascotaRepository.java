@@ -10,4 +10,6 @@ public interface MascotaRepository extends JpaRepository<Mascota, Integer> {
 
     @Query(value = "select m from Mascota as m where m.user.email=:email")
     Mascota findMascotaByEmail(@Param("email") String email);
+
+
 }

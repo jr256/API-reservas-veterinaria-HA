@@ -12,4 +12,6 @@ public interface MascotaService {
     MascotaDto createMascota(MascotaDto mascotaDto);
 
     MascotaDto updateMascota(MascotaDto mascotaDto);
+
+
 }
