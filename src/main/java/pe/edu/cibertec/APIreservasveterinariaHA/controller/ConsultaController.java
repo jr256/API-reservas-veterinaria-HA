@@ -63,4 +63,20 @@ public class ConsultaController {
     }
 
 
+    @GetMapping("/pormascota")
+    @ResponseBody
+    public ResponseEntity<List<Consulta>> listarConsultasReservadasPorMascota(
+            @RequestParam("idmascota") Integer idmascota
+    ) {
+        List<Consulta> consultaList = new ArrayList<>();
+        consultaService.listarConsultasReservadasPorMascota(idmascota)
+                .forEach(consultaList::add);
+
+        if(consultaList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return  new ResponseEntity<>(consultaList, HttpStatus.OK);
+    }
+
+
 }

@@ -34,5 +34,8 @@ public class ConsultaService {
 
     }
 
+    public List<Consulta> listarConsultasReservadasPorMascota(Integer idmascota) {
+        return consultaRepository.buscarConsultasReservadasPorMascota(idmascota);
+    }
 
 }

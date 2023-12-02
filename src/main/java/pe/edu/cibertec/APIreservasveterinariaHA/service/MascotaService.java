@@ -1,5 +1,6 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.service;
 
+import org.springframework.data.domain.Page;
 import pe.edu.cibertec.APIreservasveterinariaHA.model.bd.Mascota;
 import pe.edu.cibertec.APIreservasveterinariaHA.model.dto.MascotaDto;
 
@@ -12,6 +13,8 @@ public interface MascotaService {
     MascotaDto createMascota(MascotaDto mascotaDto);
 
     MascotaDto updateMascota(MascotaDto mascotaDto);
+
+    Page<MascotaDto> loadMascotasByName(String name, int page, int size);
 
 
 }

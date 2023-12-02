@@ -1,8 +1,11 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.model.bd;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idrecojo")
 @Data
 @Entity
 @Table(name = "recojo")
@@ -29,6 +32,11 @@ public class Recojo {
 
     @ManyToOne
     @JoinColumn(name = "idmascota")
+    @JsonIgnoreProperties("recojos")
     private Mascota mascota;
+
+    @ManyToOne
+    @JoinColumn(name = "idestadoservicio")
+    private EstadoServicio estadoservicio;
 
 }
