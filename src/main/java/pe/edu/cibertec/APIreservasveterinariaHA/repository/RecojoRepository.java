@@ -13,15 +13,13 @@ import java.util.List;
 public interface RecojoRepository extends JpaRepository<Recojo, Integer> {
 
 
-    @Query("SELECT recojo FROM Recojo recojo WHERE recojo.mascota.idmascota = :idmascota AND recojo.estadoservicio.idestadoservicio = 2")
+    @Query("SELECT recojo FROM Recojo recojo WHERE recojo.mascota.idmascota = :idmascota ")
     List<Recojo> buscarRecojosPorMascota(@Param("idmascota") Integer idmascota);
 
 
 
-    @Query("SELECT recojo FROM Recojo recojo WHERE recojo.estadoservicio.idestadoservicio = 2")
-    List<Recojo> listarRecojos();
 
-    @Query("SELECT recojo FROM Recojo recojo WHERE recojo.fecha = :fecha AND recojo.estadoservicio.idestadoservicio = 2")
+    @Query("SELECT recojo FROM Recojo recojo WHERE recojo.fecha = :fecha ")
     List<Recojo> buscarRecojosReservados( @Param("fecha") String fecha);
 
 

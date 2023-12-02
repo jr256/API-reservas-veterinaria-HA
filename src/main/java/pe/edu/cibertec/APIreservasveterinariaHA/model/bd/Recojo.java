@@ -35,8 +35,6 @@ public class Recojo {
     @JsonIgnoreProperties("recojos")
     private Mascota mascota;
 
-    @ManyToOne
-    @JoinColumn(name = "idestadoservicio")
-    private EstadoServicio estadoservicio;
+
 
 }
