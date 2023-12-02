@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/estado")
+@RequestMapping(path = "estado")
 public class EstadoController {
 }

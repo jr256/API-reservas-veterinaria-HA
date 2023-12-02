@@ -14,7 +14,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/veterinario")
+@RequestMapping(path = "veterinario")
 public class VeterinarioController {
 
     private VeterinarioService veterinarioService;

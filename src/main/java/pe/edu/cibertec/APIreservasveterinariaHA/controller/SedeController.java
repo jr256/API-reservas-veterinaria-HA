@@ -16,7 +16,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/sede")
+@RequestMapping(path = "sede")
 @CrossOrigin(origins = "http://localhost:4200")
 public class SedeController {
 

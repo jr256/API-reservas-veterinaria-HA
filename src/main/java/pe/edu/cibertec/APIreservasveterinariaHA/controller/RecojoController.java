@@ -11,7 +11,7 @@ import pe.edu.cibertec.APIreservasveterinariaHA.service.RecojoService;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/recojo")
+@RequestMapping(path = "recojo")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RecojoController {
 

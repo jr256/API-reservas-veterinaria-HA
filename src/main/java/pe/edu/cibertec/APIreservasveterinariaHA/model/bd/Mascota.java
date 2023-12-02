@@ -1,6 +1,5 @@
 package pe.edu.cibertec.APIreservasveterinariaHA.model.bd;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,28 +12,16 @@ public class Mascota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idmascota;
 
-    @Column(name = "correopropietario")
-    private String correopropietario;
-
-    @Column(name = "nombrepropietario")
+     @Column(name = "nombrepropietario")
     private String nombrepropietario;
 
     @Column(name = "nombremascota")
     private String nombremascota;
 
-    @Column(name = "fechanacimiento")
-    private String fechanacimiento;
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
+    private User user;
 
-    @Column(name = "raza")
-    private String raza;
 
-    @ManyToOne
-    @JoinColumn(name ="idestado")
-    private Estado estado;
-
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "idusuario")
-    private Usuario usuario;
 
 }

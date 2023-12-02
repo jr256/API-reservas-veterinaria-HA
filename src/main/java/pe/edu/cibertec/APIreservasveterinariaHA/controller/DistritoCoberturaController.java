@@ -17,7 +17,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/cobertura")
+@RequestMapping(path = "cobertura")
 @CrossOrigin(origins = "http://localhost:4200")
 public class DistritoCoberturaController {
 
